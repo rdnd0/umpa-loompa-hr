@@ -1,11 +1,12 @@
 import React from "react";
 import Header from "./Header";
+import OompasGrid from "./OompasGrid";
 
 const MainView = () => {
   return (
     <>
       <Header />
-      <div>MainView</div>{" "}
+      <OompasGrid />
     </>
   );
 };
