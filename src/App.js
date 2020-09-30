@@ -7,7 +7,7 @@ import {
   fetcher,
   dedupingInterval,
   revalidateOnFocus,
-} from "./utils/SWRConfigValues";
+} from "./utils/SWRConfig";
 
 function App() {
   return (

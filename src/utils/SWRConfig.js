@@ -5,3 +5,12 @@ export const fetcher = (...args) =>
 export const dedupingInterval = 86400000;
 
 export const revalidateOnFocus = false;
+
+export const getKey = (pageIndex, previousPageData) => {
+  if (previousPageData && previousPageData.current === previousPageData.total) {
+    return null;
+  }
+  return `https://2q2woep105.execute-api.eu-west-1.amazonaws.com/napptilus/oompa-loompas?page=${
+    pageIndex + 1
+  }`;
+};
