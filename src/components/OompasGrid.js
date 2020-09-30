@@ -12,7 +12,7 @@ const OompasGrid = () => {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="grid grid-cols-3 gap-4 gap-y-20 p-40">
       {data.results.map((oompa) => (
         <OompaCard key={oompa.id} oompa={oompa} />
       ))}
