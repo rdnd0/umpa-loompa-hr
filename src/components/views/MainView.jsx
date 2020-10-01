@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import ScrollToTop from "react-scroll-up";
+import upArrowIcon from "../../assets/round_up_arrow_icon.png";
 import { useSWRInfinite } from "swr";
 import { getKey } from "../../utils/SWRConfig";
 
@@ -7,6 +9,7 @@ import useDebounce from "../../hooks/useDebounce";
 import Header from "../Header";
 import OompasGrid from "../OompasGrid";
 import SearchBar from "../SearchBar";
+import Icon from "../Icon";
 
 const MainView = () => {
   const { data, size, setSize } = useSWRInfinite(getKey);
@@ -45,6 +48,14 @@ const MainView = () => {
         searchValue={searchValue}
         isResultEmpty={isResultEmpty}
       />
+      <ScrollToTop showUnder={160}>
+        <Icon
+          classes=""
+          imgSrc={upArrowIcon}
+          altText="go-up-arrow"
+          width="50px"
+        />
+      </ScrollToTop>
     </>
   );
 };
