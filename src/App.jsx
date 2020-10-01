@@ -1,6 +1,6 @@
 import React from "react";
-import MainView from "./components/MainView";
-import DetailView from "./components/DetailView";
+import MainView from "./components/views/MainView";
+import DetailView from "./components/views/DetailView";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { SWRConfig } from "swr";
 import {
