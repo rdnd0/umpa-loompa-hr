@@ -28,7 +28,7 @@ const ImageWithLoading = ({ src, alt }) => {
             >
               <rect
                 fill="url(#gridpattern)"
-                stroke-width="0"
+                strokeWidth="0"
                 y="0"
                 x="0"
                 height="100%"
