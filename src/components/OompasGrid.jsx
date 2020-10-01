@@ -1,19 +1,20 @@
 import React from "react";
-import { useSWRInfinite } from "swr";
+import PropTypes from "prop-types";
 import { Waypoint } from "react-waypoint";
 
-import { getKey } from "../utils/SWRConfig";
 import OompaCard from "./OompaCard";
 
-const OompasGrid = () => {
-  const { data, size, setSize } = useSWRInfinite(getKey);
+const OompasGrid = ({ data, size, setSize, searchValue, isResultEmpty }) => {
   const handleNextPage = () => {
     const totalDataLength = data && data[0].total;
-    if (totalDataLength === size) return null;
+    if (totalDataLength === size || searchValue) return null;
     setSize(size + 1);
   };
 
-  if (!data) return <div>Loading...</div>;
+  if (isResultEmpty && searchValue)
+    return <div className="flex justify-center">No results were found</div>;
+  if (!data.length)
+    return <div className="flex justify-center">Loading...</div>;
 
   return (
     <div className="grid grid-cols-3 gap-4 gap-y-20 p-40">
@@ -25,6 +26,22 @@ const OompasGrid = () => {
       <Waypoint onEnter={handleNextPage} />
     </div>
   );
+};
+
+OompasGrid.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape()),
+  size: PropTypes.number,
+  setSize: PropTypes.func,
+  searchValue: PropTypes.string,
+  isResultEmpty: PropTypes.bool,
+};
+
+OompasGrid.defaultProps = {
+  data: [],
+  size: 0,
+  setSize: () => {},
+  searchValue: "",
+  isResultEmpty: false,
 };
 
 export default OompasGrid;
