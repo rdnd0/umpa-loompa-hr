@@ -7,8 +7,10 @@ import OompaCard from "./OompaCard";
 
 const OompasGrid = () => {
   const { data, size, setSize } = useSWRInfinite(getKey);
-  const handleNextPage = (totalScreens) => {
-    if (totalScreens !== size) setSize(size + 1);
+  const handleNextPage = () => {
+    const totalDataLength = data && data[0].total;
+    if (totalDataLength === size) return null;
+    setSize(size + 1);
   };
 
   if (!data) return <div>Loading...</div>;
