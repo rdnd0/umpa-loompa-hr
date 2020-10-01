@@ -10,7 +10,7 @@ const iconAltText = "umpa-loompa-logo";
 
 const Header = ({ redirectHome }) => {
   return (
-    <div className="bg-gray-500 pl-16 p-2 flex">
+    <header className="bg-gray-500 pl-16 p-2 flex">
       {redirectHome ? (
         <Link to="/">
           <Icon
@@ -23,7 +23,7 @@ const Header = ({ redirectHome }) => {
         <Icon classes={iconClasses} imgSrc={oompaLogo} altText={iconAltText} />
       )}
       <span className="pl-6">Oompa Loompas' Crew</span>
-    </div>
+    </header>
   );
 };
 
