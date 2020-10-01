@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Waypoint } from "react-waypoint";
 
 import OompaCard from "./OompaCard";
+import LoaderComponent from "./LoaderComponent";
 
 const OompasGrid = ({ data, size, setSize, searchValue, isResultEmpty }) => {
   const handleNextPage = () => {
@@ -14,7 +15,11 @@ const OompasGrid = ({ data, size, setSize, searchValue, isResultEmpty }) => {
   if (isResultEmpty && searchValue)
     return <div className="flex justify-center">No results were found</div>;
   if (!data.length)
-    return <div className="flex justify-center">Loading...</div>;
+    return (
+      <div className="flex justify-center">
+        <LoaderComponent />
+      </div>
+    );
 
   return (
     <div className="grid grid-cols-3 gap-4 gap-y-20 p-40">
