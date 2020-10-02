@@ -1,19 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import genderConversionObject from "../utils/genderConversionObject";
 import ImageWithLoading from "./ImageWithLoading";
+import OompaNameTag from "./OompaNameTag";
+import OompaPersonalDetails from "./OompaPersonalDetails";
 
 const OompaCard = ({ oompa }) => {
   return (
     <Link to={`/${oompa.id}`}>
       <article>
         <ImageWithLoading src={oompa.image} alt="oompa's file" />
-        <h2 className="text-2xl">{oompa.first_name}</h2>
-        <div className="flex flex-col text-gray-500 italic text-sm">
-          <span>{genderConversionObject[oompa.gender || "F"]}</span>
-          <span>{oompa.profession || "unknown"}</span>
-        </div>
+        <OompaNameTag firstName={oompa.first_name} />
+        <OompaPersonalDetails
+          gender={oompa.gender}
+          profession={oompa.profession}
+        />
       </article>
     </Link>
   );
