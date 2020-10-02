@@ -7,8 +7,8 @@ import { getKey } from "../../utils/SWRConfig";
 import getFilteredArray from "../../utils/getFilteredArray";
 import useDebounce from "../../hooks/useDebounce";
 import Header from "../Header";
-import OompasGrid from "../OompasGrid";
 import SearchBar from "../SearchBar";
+import OompasGrid from "../OompasGrid";
 import Icon from "../Icon";
 
 const MainView = () => {
@@ -39,7 +39,7 @@ const MainView = () => {
 
   return (
     <>
-      <Header />
+      <Header title="Oompa Loompas' Crew" />
       <SearchBar provideSearchValue={setSearchValue} />
       <OompasGrid
         data={oompasFilteredData}

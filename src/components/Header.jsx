@@ -8,9 +8,9 @@ import oompaLogo from "../assets/logo-umpa-loompa.png";
 const iconClasses = "max-w-8";
 const iconAltText = "umpa-loompa-logo";
 
-const Header = ({ redirectHome }) => {
+const Header = ({ redirectHome, title }) => {
   return (
-    <header className="bg-gray-500 pl-16 p-2 flex">
+    <header className="bg-gray-500 pl-40 py-2 flex">
       {redirectHome ? (
         <Link to="/">
           <Icon
@@ -22,17 +22,19 @@ const Header = ({ redirectHome }) => {
       ) : (
         <Icon classes={iconClasses} imgSrc={oompaLogo} altText={iconAltText} />
       )}
-      <span className="pl-6">Oompa Loompas' Crew</span>
+      <span className="pl-8">{title}</span>
     </header>
   );
 };
 
 Header.propTypes = {
   redirectHome: PropTypes.bool,
+  title: PropTypes.string,
 };
 
 Header.defaultProps = {
   redirectHome: false,
+  title: "",
 };
 
 export default Header;
