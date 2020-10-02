@@ -9,7 +9,7 @@ const ImageWithLoading = ({ src, alt }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   return (
     <div
-      className="overflow-hidden mb-6 flex items-center justify-center"
+      className="relative overflow-hidden mb-6 flex items-center"
       style={containerStyle}
     >
       {!isImageLoaded ? (
@@ -21,6 +21,7 @@ const ImageWithLoading = ({ src, alt }) => {
         style={!isImageLoaded ? hiddenStyle : {}}
         src={src}
         alt={alt}
+        className="absolute"
         onLoad={() => setIsImageLoaded(true)}
       />
     </div>
