@@ -4,9 +4,9 @@ import genderConversionObject from "../utils/genderConversionObject";
 
 const OompaPersonalDetails = ({ gender, profession }) => {
   return (
-    <div className="flex flex-col text-gray-500 italic text-sm">
+    <div className="flex flex-col text-gray-500 text-sm">
       <span>{genderConversionObject[gender]}</span>
-      <span>{profession}</span>
+      <span className="italic">{profession}</span>
     </div>
   );
 };

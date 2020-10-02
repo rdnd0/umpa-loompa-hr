@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const OompaNameTag = ({ firstName }) => {
-  return <h2 className="text-2xl">{firstName}</h2>;
+  return <h2 className="text-2xl font-medium">{firstName}</h2>;
 };
 
 OompaNameTag.propTypes = {
