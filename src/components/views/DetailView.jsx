@@ -7,7 +7,7 @@ const DetailView = () => {
   const { id } = useParams();
   return (
     <>
-      <Header redirectHome />
+      <Header redirectHome title="Oompa Loompas' Crew" />
       <div>DetailView</div>
       <div>{id}</div>
     </>
