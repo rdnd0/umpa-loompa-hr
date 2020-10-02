@@ -13,7 +13,11 @@ const OompasGrid = ({ data, size, setSize, searchValue, isResultEmpty }) => {
   };
 
   if (isResultEmpty && searchValue)
-    return <div className="flex justify-center">No results were found</div>;
+    return (
+      <div className="flex justify-center pt-20 text-red-400 text-xl">
+        Please try again, no results were found.
+      </div>
+    );
   if (!data.length)
     return (
       <div className="flex justify-center">
@@ -22,7 +26,7 @@ const OompasGrid = ({ data, size, setSize, searchValue, isResultEmpty }) => {
     );
 
   return (
-    <div className="grid grid-cols-3 gap-4 gap-y-20 p-40">
+    <div className="grid grid-cols-3 gap-4 gap-y-20 pt-20 p-40">
       {data.map((oompas) =>
         oompas.results?.map((oompa) => (
           <OompaCard key={oompa.id} oompa={oompa} />

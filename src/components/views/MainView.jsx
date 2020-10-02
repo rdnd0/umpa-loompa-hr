@@ -8,6 +8,7 @@ import getFilteredArray from "../../utils/getFilteredArray";
 import useDebounce from "../../hooks/useDebounce";
 import Header from "../Header";
 import SearchBar from "../SearchBar";
+import DoubleTitle from "../DoubleTitle";
 import OompasGrid from "../OompasGrid";
 import Icon from "../Icon";
 
@@ -41,6 +42,10 @@ const MainView = () => {
     <>
       <Header title="Oompa Loompas' Crew" />
       <SearchBar provideSearchValue={setSearchValue} />
+      <DoubleTitle
+        mainTitle="Find your Oompa Loompa"
+        secondaryTitle="There are more than 100k"
+      />
       <OompasGrid
         data={oompasFilteredData}
         setSize={setSize}

@@ -9,7 +9,7 @@ const SearchBar = ({ provideSearchValue }) => {
   };
   return (
     <div className="flex justify-end">
-      <div className="mr-40 mt-8 mx-auto relative flex">
+      <div className="mr-40 my-8 mx-auto relative flex">
         <input
           className=" appearance-none border border-gray-500 rounded w-full  text-gray-900 placeholder-gray-900 leading-tight focus:border-gray-700 focus:outline-none p-2 pl-4 pr-15"
           type="text"
