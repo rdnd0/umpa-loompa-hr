@@ -6,7 +6,7 @@ const DetailWrapper = ({ left, right }) => {
     <motion.div
       initial={{ scale: 0.9 }}
       animate={{
-        scale: [0.95, 1],
+        scale: [0.95, 1, 1],
       }}
       className="flex py-16 px-40"
     >
