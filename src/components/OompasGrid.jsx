@@ -26,7 +26,7 @@ const OompasGrid = ({ data, size, setSize, searchValue, isResultEmpty }) => {
     );
 
   return (
-    <div className="grid grid-cols-3 gap-4 gap-y-20 pt-20 p-40">
+    <div className="grid grid-cols-3 gap-4 gap-y-8 pt-20 p-40">
       {data.map((oompas) =>
         oompas.results?.map((oompa) => (
           <OompaCard key={oompa.id} oompa={oompa} />
