@@ -20,6 +20,7 @@ const OompaCard = ({ oompa }) => {
         whileTap={{
           scale: 1,
         }}
+        data-cy={`oompaCard-${oompa.id}`}
       >
         <ImageWithLoading src={oompa.image} alt="oompa's file" />
         <OompaNameTag firstName={oompa.first_name} />

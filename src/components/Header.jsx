@@ -12,7 +12,7 @@ const Header = ({ redirectHome, title }) => {
   return (
     <header className="bg-gray-500 pl-40 py-2 flex">
       {redirectHome ? (
-        <Link to="/">
+        <Link to="/" data-cy="headerLink">
           <Icon
             classes={iconClasses}
             imgSrc={oompaLogo}

@@ -33,6 +33,7 @@ const OompasGrid = ({ data, size, setSize, searchValue, isResultEmpty }) => {
         ))
       )}
       <Waypoint onEnter={handleNextPage} />
+      <span data-cy="gridBottom" />
     </div>
   );
 };

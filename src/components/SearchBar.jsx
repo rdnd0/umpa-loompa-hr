@@ -16,6 +16,7 @@ const SearchBar = ({ provideSearchValue }) => {
           placeholder="Search"
           id="searchText"
           onChange={handleInputChange}
+          data-cy="searchBar"
         />
         <div className="flex items-center absolute right-0 top-0 mr-4 mt-0 ">
           <span className="text-2xl text-gray-500 font-hairline">|</span>
