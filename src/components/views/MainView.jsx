@@ -37,10 +37,15 @@ const MainView = () => {
     if (data) setOompasFilteredData(data);
   }, [data]);
 
+  const handleSearchValue = (value) => {
+    setOompasFilteredData([]);
+    setSearchValue(value);
+  };
+
   return (
     <>
       <Header title="Oompa Loompas' Crew" />
-      <SearchBar provideSearchValue={setSearchValue} />
+      <SearchBar provideSearchValue={handleSearchValue} />
       <DoubleTitle
         mainTitle="Find your Oompa Loompa"
         secondaryTitle="There are more than 100k"
