@@ -24,10 +24,11 @@ const MainView = () => {
         debouncedSearchValue,
         data
       );
-      if (areResultsEmpty) setIsResultEmpty(areResultsEmpty);
+      setIsResultEmpty(areResultsEmpty);
       if (filteredItems && filteredItems.length)
         setOompasFilteredData(filteredItems);
     } else {
+      setIsResultEmpty(false);
       setOompasFilteredData(data);
     }
   }, [data, debouncedSearchValue, isResultEmpty]);
